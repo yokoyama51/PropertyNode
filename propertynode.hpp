@@ -71,7 +71,7 @@ public:
 	 *
 	 * @note	delete処理等は行わないので、呼び出し側で解放処理は実装すること
 	 */
-	bool Erase(const Char * propname)
+	bool Remove(const Char * propname)
 		{
 			PropMap::iterator it = m_property_map.find(propname);
 			if(it != m_property_map.end()){
@@ -93,7 +93,7 @@ public:
 	 * @warning	保持している値と戻り値の型が異なる場合は例外となる。
 	 */
 	template <typename T>
-	T Find(const Char * propname) const
+	T Get(const Char * propname) const
 		{
 			PropMap::const_iterator it = m_property_map.find(propname);
 			if(it != m_property_map.end()){
